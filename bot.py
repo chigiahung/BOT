@@ -22,7 +22,7 @@ logging.basicConfig(
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 # ID channel Discord mà bot sẽ gửi status vào
-CHANNEL_ID = 1540367128824127620
+CHANNEL_ID = 1540967218509258752
 
 # QUAN TRỌNG:
 # Chỉ ghi hostname/IP, KHÔNG ghi :26142 ở cuối.
