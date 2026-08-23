@@ -1,9 +1,16 @@
 import os
+import logging
 
 import discord
 from discord.ext import tasks
 from mcstatus import JavaServer
 
+
+# Hiện log của discord.py trên Railway
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s"
+)
 
 # =========================
 # CONFIG
@@ -15,7 +22,7 @@ from mcstatus import JavaServer
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 # ID channel Discord mà bot sẽ gửi status vào
-CHANNEL_ID = 1540967218509258752
+CHANNEL_ID = 1540367128824127620
 
 # QUAN TRỌNG:
 # Chỉ ghi hostname/IP, KHÔNG ghi :26142 ở cuối.
@@ -227,3 +234,24 @@ if not DISCORD_TOKEN:
         "Thiếu biến môi trường DISCORD_TOKEN. "
         "Hãy thêm DISCORD_TOKEN trong Railway Variables."
     )
+
+print(
+    f"Đã nhận DISCORD_TOKEN (độ dài: {len(DISCORD_TOKEN)} ký tự). "
+    "Đang kết nối Discord...",
+    flush=True
+)
+
+try:
+    bot.run(DISCORD_TOKEN)
+except discord.LoginFailure:
+    print(
+        "Token Discord không hợp lệ. Hãy copy lại token mới "
+        "từ Discord Developer Portal, không thêm dấu ngoặc kép.",
+        flush=True
+    )
+except Exception as error:
+    print(
+        f"Bot dừng vì lỗi {type(error).__name__}: {error}",
+        flush=True
+    )
+    raise
