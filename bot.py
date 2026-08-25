@@ -26,8 +26,8 @@ CHANNEL_ID = 1540967218509258752
 
 # QUAN TRỌNG:
 # Chỉ ghi hostname/IP, KHÔNG ghi :26142 ở cuối.
-MC_HOST = "sg-node1.fable.host"
-MC_PORT = 26142
+MC_HOST = "asia2-mumbai.pingless.org"
+MC_PORT = 25633
 
 UPDATE_INTERVAL = 30
 
