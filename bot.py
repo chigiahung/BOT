@@ -27,7 +27,7 @@ CHANNEL_ID = 1540967218509258752
 # QUAN TRỌNG:
 # Chỉ ghi hostname/IP, KHÔNG ghi :26142 ở cuối.
 MC_HOST = "sg-node1.fable.host"
-MC_PORT = 25797
+MC_PORT = 26210
 
 UPDATE_INTERVAL = 30
 
